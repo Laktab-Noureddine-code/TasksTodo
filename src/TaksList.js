@@ -1,17 +1,26 @@
 import { useState } from "react";
-export default function TaksList({ todos, onChangeTodo, onDeleteTodo }) {
+export default function TaksList({
+  todos,
+  onChangeTodo,
+  onDeleteTodo,
+}) {
   return (
     <ul>
       {todos.map((task) => (
         <li key={task.id}>
-          <Task task={task} onChange={onChangeTodo} onDelete={onDeleteTodo} />
+          <Task
+            todos={todos}
+            task={task}
+            onChange={onChangeTodo}
+            onDelete={onDeleteTodo}
+          />
         </li>
       ))}
     </ul>
   );
 }
 
-function Task({ task, onChange, onDelete }) {
+function Task({ todos ,task, onChange, onDelete}) {
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
   if (isEditing) {
@@ -64,6 +73,7 @@ function Task({ task, onChange, onDelete }) {
       >
         Delete
       </button>
+      
     </>
   );
 }

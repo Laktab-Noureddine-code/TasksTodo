@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+body{
+  transition: .2s;
+}
+.App {
+  height: 100vh;
+}
+.main {
+  margin: auto;
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

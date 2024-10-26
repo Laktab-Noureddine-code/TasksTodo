@@ -1,0 +1,60 @@
+@import 'https: //fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet';
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+.header-container {
+  height: 60px;
+  width: 620px;
+  margin: auto;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  position: relative;
+}
+.header-container::after{
+    content: "";
+    height: 0.2px;
+    width: 90%;
+    background-color: #ffffff18;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+}
+.leftSide {
+  display: flex;
+  align-items: center;
+}
+.leftSide h2 {
+  margin-left: 10px;
+  font-size: 18px;
+}
+.leftSide i {
+  font-size: 20px;
+}
+.rightSide{
+    display: flex;
+    align-items: center;
+}
+.rightSide button{
+    cursor: pointer;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-inline: 5px;
+    background-color: #ffffff18;
+    border-radius:2px;
+    padding: 6px;
+    outline: none;
+    font-size: 15px;
+}
+.rightSide button i{
+    margin-right: 4px;
+    font-size: 15px;
+}

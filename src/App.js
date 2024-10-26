@@ -1,24 +1,24 @@
 import "./App.css";
 import AddTasks from "./AddTasks.js";
 import TaksList from "./TaksList.js";
+import TodoHeader from "./TodoHeader.js";
+import Timers from "./PomoTimes/Timers.js";
 import { useState } from "react";
 
-const arrayOfTasks = [
-  { id: 1, title: "Start project", done: false },
-  { id: 2, title: "Doing my home work", done: true },
-];
+
 
 function App() {
-  const [todos, setTodos] = useState(arrayOfTasks);
+  const [todos, setTodos] = useState([]);
 
   function handleAddTaks(task) {
     setTodos([...todos, { id: Date.now(), title: task, done: false }]);
   }
   function handleDeleteTaks(taskId) {
     setTodos(todos.filter((todo)=>{
-      return todo.id != taskId
+      return todo.id !== taskId
     }))
   }
+  
   function handleEditTaks(task) {
     setTodos(
       todos.map((todo)=>{
@@ -30,15 +30,24 @@ function App() {
       })
     )
   }
+
   return (
-    <>
-      <AddTasks onAddTask={handleAddTaks} />
-      <TaksList
-        todos={todos}
-        onChangeTodo={handleEditTaks}
-        onDeleteTodo={handleDeleteTaks}
-      />
-    </>
+    <div className="App">
+      <div className="header">
+        <TodoHeader />
+      </div>
+      <div className="main">
+        <Timers />
+      </div>
+      <div className="container">
+        <TaksList
+          todos={todos}
+          onChangeTodo={handleEditTaks}
+          onDeleteTodo={handleDeleteTaks}
+        />
+        <AddTasks onAddTask={handleAddTaks} />
+      </div>
+    </div>
   );
 }
 
